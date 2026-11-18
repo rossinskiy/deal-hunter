@@ -1,0 +1,377 @@
+{
+ "name": "hdd",
+ "title": "HDD 4TB/8TB 3.5in SATA 7200rpm CMR",
+ "aliases": [
+  "hdd",
+  "hard drive",
+  "hard disk",
+  "4tb",
+  "8tb",
+  "nas drive"
+ ],
+ "currency": "$",
+ "budget": 100,
+ "ship_country": "US",
+ "top_n": 10,
+ "allowed_conditions": [
+  "new",
+  "used",
+  "refurbished"
+ ],
+ "reject_keywords": [
+  "for parts",
+  "parts only",
+  "parts or repair",
+  "not working",
+  "untested",
+  "as is",
+  "as-is",
+  "defective",
+  "failed",
+  "bad sectors",
+  "clicking",
+  "smr",
+  "sas",
+  "12gb/s",
+  "12gbps",
+  "5400",
+  "5900",
+  "5640"
+ ],
+ "rules": [
+  {
+   "field": "capacity_tb",
+   "op": "in",
+   "value": [
+    4,
+    8
+   ],
+   "label": "capacity not 4 or 8 TB"
+  },
+  {
+   "field": "form_factor",
+   "op": "eq",
+   "value": "3.5",
+   "label": "not 3.5 inch"
+  },
+  {
+   "field": "interface",
+   "op": "eq",
+   "value": "SATA",
+   "label": "not SATA"
+  },
+  {
+   "field": "rpm",
+   "op": "eq",
+   "value": 7200,
+   "label": "not 7200 RPM"
+  },
+  {
+   "field": "recording",
+   "op": "eq",
+   "value": "CMR",
+   "label": "not CMR"
+  },
+  {
+   "field": "smart.reallocated",
+   "op": "lte",
+   "value": 0,
+   "label": "SMART reallocated > 0"
+  },
+  {
+   "field": "smart.pending",
+   "op": "lte",
+   "value": 0,
+   "label": "SMART pending > 0"
+  },
+  {
+   "field": "smart.uncorrectable",
+   "op": "lte",
+   "value": 0,
+   "label": "SMART uncorrectable > 0"
+  },
+  {
+   "field": "smart.status",
+   "op": "not_in",
+   "value": [
+    "fail",
+    "caution",
+    "bad"
+   ],
+   "label": "SMART status bad"
+  },
+  {
+   "field": "power_on_hours",
+   "op": "lte",
+   "value": 20000,
+   "label": "over 20000 power-on hours"
+  }
+ ],
+ "verify": [
+  "mfg_year",
+  "power_on_hours",
+  "smart.reallocated",
+  "smart.pending",
+  "smart.uncorrectable",
+  "@specs"
+ ],
+ "verify_skip_if_new": [
+  "mfg_year",
+  "power_on_hours",
+  "smart.reallocated",
+  "smart.pending",
+  "smart.uncorrectable"
+ ],
+ "display": [
+  {
+   "label": "TB",
+   "field": "capacity_tb"
+  },
+  {
+   "label": "Mfg",
+   "field": "mfg_year"
+  },
+  {
+   "label": "Power-on h",
+   "field": "power_on_hours"
+  },
+  {
+   "label": "SMART R/P/U",
+   "field": "smart_summary"
+  }
+ ],
+ "scoring": {
+  "price_weight": 20,
+  "price_unit_field": "capacity_tb",
+  "price_best": 7,
+  "price_worst": 18,
+  "seller_weight": 15,
+  "metrics": [
+   {
+    "name": "age",
+    "field": "mfg_year",
+    "weight": 25,
+    "higher_better": true,
+    "bands": [
+     [
+      2023,
+      1
+     ],
+     [
+      2022,
+      0.88
+     ],
+     [
+      2021,
+      0.76
+     ],
+     [
+      2020,
+      0.64
+     ],
+     [
+      2019,
+      0.44
+     ],
+     [
+      2018,
+      0.32
+     ]
+    ],
+    "else": 0.16,
+    "new_fraction": 0.6
+   },
+   {
+    "name": "health",
+    "field": "health_level",
+    "weight": 25,
+    "map": {
+     "verified_long_test": 1.0,
+     "verified": 0.9,
+     "claimed": 0.32
+    },
+    "new_fraction": 0.8
+   },
+   {
+    "name": "power_on_hours",
+    "field": "power_on_hours",
+    "weight": 15,
+    "bands": [
+     [
+      5000,
+      1
+     ],
+     [
+      10000,
+      0.8
+     ],
+     [
+      15000,
+      0.6
+     ],
+     [
+      20000,
+      0.27
+     ]
+    ],
+    "else": 0,
+    "new_fraction": 1
+   }
+  ]
+ },
+ "notes": "health_level: verified_long_test = SMART screenshot all zero plus long test passed; verified = SMART numbers all zero (screenshot/text); claimed = seller says tested/healthy without numbers; null = unknown. Set smart_summary as 'R0/P0/U0' when known. Mfg year is read from the drive label photo. Unknown models: fetch the manufacturer datasheet and set interface, rpm, recording, spec_source='datasheet'.",
+ "lookup": [
+  {
+   "re": "^(HUH|HUS)7\\d+.*AL[45]\\w*$",
+   "set": {
+    "interface": "SAS",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^(HUH|HUS)7\\d+.*AL[AEN]\\w*$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^HD[NS]72\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^WD\\d{3,4}FFBX$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^WD\\d{3,4}FRYZ$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^WD\\d{3,4}FYYZ$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^WD\\d{2}EF\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 5400,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^WD\\d{2}EZ\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 5400,
+    "recording": "SMR"
+   }
+  },
+  {
+   "re": "^WD\\d{4}FZBX$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST4000NM(0115|002A)$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST(4|8)000NM(000A|0055|0035|0033)$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST(4|8)000NM(0025|0045|0075)$",
+   "set": {
+    "interface": "SAS",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST(4|8)000NE001$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST8000VN004$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST4000VN\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 5900,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^ST(4000DM00[04]|8000DM00[45])$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 5400,
+    "recording": "SMR"
+   }
+  },
+  {
+   "re": "^MG0\\dSCA\\w+$",
+   "set": {
+    "interface": "SAS",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^MG0\\dACA\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
+   "re": "^HDWG\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  }
+ ]
+}

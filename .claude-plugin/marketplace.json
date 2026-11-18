@@ -1,0 +1,15 @@
+{
+  "name": "deal-hunter",
+  "owner": {
+    "name": "rossinskiy"
+  },
+  "plugins": [
+    {
+      "name": "deal-hunter",
+      "source": "./",
+      "description": "Find and rank the best deals on any item. Read-only, never buys.",
+      "version": "1.0.0"
+    }
+  ],
+  "description": "Deal hunting for any item: verified, scored, ranked, read-only."
+}

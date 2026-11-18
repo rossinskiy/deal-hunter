@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="t d">
+  <title id="t">Example output</title>
+  <desc id="d">Ranked table from a real run of the HDD profile. Unknown facts show as UNVERIFIED.</desc>
+  <rect width="1200" height="430" rx="16" fill="#0b1f1d"/>
+  <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <text x="40" y="52" font-size="22" font-weight="700" fill="#f4f1ea">HDD 4TB/8TB 3.5in SATA 7200rpm CMR: top results</text>
+    <text x="40" y="78" font-size="15" fill="#7fa7a1">Example from a real run of the bundled hdd profile (URLs omitted)</text>
+    <g font-size="15" font-weight="700" fill="#f5b942">
+      <text x="40" y="128">#</text><text x="90" y="128">Item</text><text x="400" y="128">Mfg</text>
+      <text x="480" y="128">Power-on h</text><text x="640" y="128">Total</text>
+      <text x="740" y="128">Seller</text><text x="980" y="128">Returns</text><text x="1100" y="128">Score</text>
+    </g>
+    <path d="M40 142H1160" stroke="#2dd4bf" opacity="0.5"/>
+    <g font-size="16" fill="#f4f1ea">
+      <text x="40" y="180">1</text><text x="90" y="180">WD Black WD4005FZBX</text><text x="400" y="180">2021</text>
+      <text x="640" y="180">$99.99</text><text x="740" y="180">Cirkadis (ebay)</text><text x="980" y="180">30d</text>
+      <text x="1100" y="180" font-weight="700">38.0</text>
+      <text x="40" y="226">2</text><text x="90" y="226">Seagate Exos 7E8 ST4000NM002A</text><text x="400" y="226">2021</text>
+      <text x="640" y="226">$71.70</text><text x="740" y="226">somersetgogh (ebay)</text><text x="980" y="226">30d</text>
+      <text x="1100" y="226" font-weight="700">30.1</text>
+      <text x="40" y="272">3</text><text x="90" y="272">Hitachi Ultrastar HUS724040ALE640</text><text x="400" y="272">2012</text>
+      <text x="640" y="272">$69.99</text><text x="740" y="272">themaxmart (ebay)</text><text x="980" y="272">30d</text>
+      <text x="1100" y="272" font-weight="700">23.9</text>
+      <text x="40" y="318">4</text><text x="90" y="318">HGST HDS724040ALE640</text><text x="400" y="318">2014</text>
+      <text x="640" y="318">$95.99</text><text x="740" y="318">Human-I-T (ebay)</text><text x="980" y="318">60d</text>
+      <text x="1100" y="318" font-weight="700">23.0</text>
+    </g>
+    <g font-size="16" fill="#f5b942" font-weight="700">
+      <text x="480" y="180">UNVERIFIED</text><text x="480" y="226">UNVERIFIED</text>
+      <text x="480" y="272">UNVERIFIED</text><text x="480" y="318">UNVERIFIED</text>
+    </g>
+    <rect x="40" y="346" width="1120" height="52" rx="8" fill="#12332f"/>
+    <text x="60" y="378" font-size="16" fill="#b9d3cf">Needs seller confirmation: power-on hours and SMART values. Ask for a CrystalDiskInfo or smartctl screenshot.</text>
+  </g>
+</svg>

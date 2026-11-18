@@ -1,0 +1,10 @@
+{
+  "name": "deal-hunter",
+  "version": "1.0.0",
+  "description": "Find and rank the best deals on any item across eBay, Amazon, Newegg and other shops. Verifies specs, condition and seller, reads listing photos, scores 0-100, remembers history. Read-only: never buys.",
+  "author": { "name": "rossinskiy", "url": "https://github.com/rossinskiy" },
+  "homepage": "https://github.com/rossinskiy/deal-hunter",
+  "repository": "https://github.com/rossinskiy/deal-hunter",
+  "license": "MIT",
+  "keywords": ["deals", "shopping", "price-comparison", "ebay", "amazon", "refurbished", "hardware"]
+}

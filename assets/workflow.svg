@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+  <title id="t">How deal-hunter works</title>
+  <desc id="d">Six steps: command, profile, search, verify, rank, report.</desc>
+  <rect width="1200" height="300" rx="16" fill="#0b1f1d"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#f5b942"/>
+    </marker>
+  </defs>
+  <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <rect x="40" y="70" width="170" height="160" rx="12" fill="#12332f" stroke="#2dd4bf"/>
+    <text x="125" y="104" font-size="15" fill="#f5b942" font-weight="700">1  COMMAND</text>
+    <text x="125" y="146" font-size="15" fill="#f4f1ea">/deal-hunt</text>
+    <text x="125" y="170" font-size="15" fill="#f4f1ea">rtx 3060</text>
+    <text x="125" y="194" font-size="15" fill="#f4f1ea">under 200</text>
+
+    <rect x="230" y="70" width="170" height="160" rx="12" fill="#12332f" stroke="#2dd4bf"/>
+    <text x="315" y="104" font-size="15" fill="#f5b942" font-weight="700">2  PROFILE</text>
+    <text x="315" y="146" font-size="15" fill="#f4f1ea">Hard rules</text>
+    <text x="315" y="170" font-size="15" fill="#f4f1ea">Scoring weights</text>
+    <text x="315" y="194" font-size="15" fill="#f4f1ea">Reused next time</text>
+
+    <rect x="420" y="70" width="170" height="160" rx="12" fill="#12332f" stroke="#2dd4bf"/>
+    <text x="505" y="104" font-size="15" fill="#f5b942" font-weight="700">3  SEARCH</text>
+    <text x="505" y="146" font-size="15" fill="#f4f1ea">eBay, Amazon</text>
+    <text x="505" y="170" font-size="15" fill="#f4f1ea">Newegg, B&amp;H</text>
+    <text x="505" y="194" font-size="15" fill="#f4f1ea">specialist shops</text>
+
+    <rect x="610" y="70" width="170" height="160" rx="12" fill="#12332f" stroke="#2dd4bf"/>
+    <text x="695" y="104" font-size="15" fill="#f5b942" font-weight="700">4  VERIFY</text>
+    <text x="695" y="146" font-size="15" fill="#f4f1ea">Listing is live</text>
+    <text x="695" y="170" font-size="15" fill="#f4f1ea">Photos read</text>
+    <text x="695" y="194" font-size="15" fill="#f4f1ea">Datasheet check</text>
+
+    <rect x="800" y="70" width="170" height="160" rx="12" fill="#12332f" stroke="#2dd4bf"/>
+    <text x="885" y="104" font-size="15" fill="#f5b942" font-weight="700">5  RANK</text>
+    <text x="885" y="146" font-size="15" fill="#f4f1ea">Filter, dedupe</text>
+    <text x="885" y="170" font-size="15" fill="#f4f1ea">Score 0-100</text>
+    <text x="885" y="194" font-size="15" fill="#f4f1ea">Save history</text>
+
+    <rect x="990" y="70" width="170" height="160" rx="12" fill="#12332f" stroke="#f5b942"/>
+    <text x="1075" y="104" font-size="15" fill="#f5b942" font-weight="700">6  REPORT</text>
+    <text x="1075" y="146" font-size="15" fill="#f4f1ea">Top 10 table</text>
+    <text x="1075" y="170" font-size="15" fill="#f4f1ea">VERIFIED vs ask</text>
+    <text x="1075" y="194" font-size="15" fill="#f4f1ea">the seller first</text>
+  </g>
+  <g stroke="#f5b942" stroke-width="2.5" marker-end="url(#a)">
+    <path d="M212 150h16"/><path d="M402 150h16"/><path d="M592 150h16"/><path d="M782 150h16"/><path d="M972 150h16"/>
+  </g>
+  <text x="600" y="268" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#7fa7a1" text-anchor="middle">Read-only at every step. Nothing is bought and no messages are sent.</text>
+</svg>

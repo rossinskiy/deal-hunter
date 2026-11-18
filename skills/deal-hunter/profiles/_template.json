@@ -1,0 +1,29 @@
+{
+ "name": "short-slug",
+ "title": "Human readable title",
+ "aliases": ["words", "that", "match", "this", "profile"],
+ "currency": "$",
+ "budget": 100,
+ "ship_country": "US",
+ "top_n": 10,
+ "allowed_conditions": ["new", "open box", "refurbished", "used"],
+ "reject_keywords": ["for parts", "parts only", "not working", "untested", "as is", "defective", "locked"],
+ "title_must_match_any": ["regex for the exact model or variant"],
+ "rules": [
+  {"field": "some_field", "op": "eq|ne|in|not_in|gte|lte|gt|lt", "value": 0, "label": "why rejected"}
+ ],
+ "verify": ["fields that must be CONFIRMED for a VERIFIED result"],
+ "verify_skip_if_new": ["subset of verify that new items are exempt from"],
+ "display": [{"label": "Column", "field": "some_field"}],
+ "scoring": {
+  "price_weight": 30,
+  "price_best": 0,
+  "price_worst": 100,
+  "seller_weight": 15,
+  "metrics": [
+   {"name": "age", "field": "year", "weight": 20, "higher_better": true, "bands": [[2023, 1], [2020, 0.6]], "else": 0.2, "new_fraction": 0.8},
+   {"name": "condition", "field": "condition", "weight": 20, "map": {"new": 1, "open box": 0.9, "refurbished": 0.8, "used": 0.6}}
+  ]
+ },
+ "notes": "Anything Claude needs to remember when reading listings of this item"
+}
