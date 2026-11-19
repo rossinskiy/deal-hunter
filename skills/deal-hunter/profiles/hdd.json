@@ -302,6 +302,14 @@
    }
   },
   {
+   "re": "^MG08ADA\\w+$",
+   "set": {
+    "interface": "SATA",
+    "rpm": 7200,
+    "recording": "CMR"
+   }
+  },
+  {
    "re": "^ST(4|8)000NM(000A|0055|0035|0033)$",
    "set": {
     "interface": "SATA",
@@ -334,7 +342,7 @@
    }
   },
   {
-   "re": "^ST4000VN\\w+$",
+   "re": "^ST4000VN(000|008)$",
    "set": {
     "interface": "SATA",
     "rpm": 5900,
